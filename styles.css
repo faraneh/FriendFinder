@@ -5,7 +5,41 @@ body{
     padding: 0;
     background-color: #F7F7FF;
     font-family: 'Ubuntu', sans-serif;
+    min-height: 2000px;
 }
+
+/* navbar */
+.navbar { 
+    width: 100vw;
+    height: 8rem;
+    position: fixed;
+    top: 0;
+}
+.hamburgerVisual { 
+    width: 60px;
+    height: 50px;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin-top: 20px;
+    cursor: pointer;
+}
+.ham { 
+    width: 50px;
+    height: 6px;
+    background-color: #577399;
+    margin: auto;
+    border-radius: 3px;
+}
+.ham:hover { 
+    background-color: #FE5F55;
+}
+
+
+
+
+/* signin / sign up */
 
 .siteIntro { 
     width: 300px;
@@ -28,8 +62,12 @@ body{
     height: 150px;
     border-radius: 50%;
     position: absolute;
-    top: -60px;
-    left: 15px;
+    top: -78px;
+    left: 0px;
+    border: 10px solid #577399;
+    box-shadow: 2px 3px 21px 1px rgba(87,115,153,0.79);
+    -webkit-box-shadow: 2px 3px 21px 1px rgba(87,115,153,0.79);
+    -moz-box-shadow: 2px 3px 21px 1px rgba(87,115,153,0.79);
 }
 .siteIntro h1 { 
     color: #F7F7FF;
@@ -53,6 +91,7 @@ body{
     font-size: 1.4rem;
     font-weight: 800;
     text-shadow: 1px 1px 10px #af8153;
+    cursor: pointer;
 }
 .siteIntroBtn2 { 
     color: #F7F7FF;
@@ -64,4 +103,20 @@ body{
     border-radius: 15px;
     background-color: #577399;
     font-size: 1.4rem;
+    cursor: pointer;
+}
+
+
+
+
+
+/* footer */
+.footer { 
+    position: absolute;
+    bottom: 0;
+    height: 8rem;
+    width: 100%;
+}
+.footer hr { 
+    width: 95%;
 }

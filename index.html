@@ -8,15 +8,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- bootstrap -->
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
-
 
     <!-- font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+
+    <!-- fontawesome -->
+    <script src="https://kit.fontawesome.com/fcf0361c04.js" crossorigin="anonymous"></script>
 
     <!-- css -->
     <link rel="stylesheet" href="styles.css">
@@ -25,6 +24,29 @@
 </head>
 <body>
     <!-- navbar -->
+    <div class="navbar" style='display: flex; flex-direction: row; justify-content: space-between; padding:20px 50px; box-sizing: border-box;'>
+        <div class="logo" style="display: flex; flex-direction: row; justify-content: center; cursor: pointer;">
+            <i class="fas fa-paw" style="font-size: 5rem; transform: rotate(10deg); color: #BDD5EA;"></i><p style="line-height: 5rem; font-size: 1.8rem; margin: 5px 0 0 -25px; font-weight: 100; z-index: 2;">DogWalkers</p>
+        </div>
+        <div class="rightLinks">
+            <div class="links">
+                <ul class="linksUl" style="display: none; flex-direction: row;">
+                    <li class="linksLi" style="list-style: none; margin: 0 20px; line-height: 4rem">About Us</li>
+                    <li class="linksLi" style="list-style: none; margin: 0 20px; line-height: 4rem">Contact Us</li>
+                    <li class="linksLi" style="list-style: none; margin: 0 20px; line-height: 4rem">Community</li>
+                </ul>
+            </div>
+            <div class="hamburger">
+                <div class="hamburgerVisual">
+                    <span class="ham ham1"></span>
+                    <span class="ham ham2"></span>
+                    <span class="ham ham3"></span>
+                </div>
+                <div class="hamburgerItems"></div>
+            </div>
+        </div>
+    </div>
+
 
     <!-- welcome part -->
     <div class="siteIntro">
@@ -36,6 +58,20 @@
     </div>
 
     <!-- main page -->
+
+
+
+
+    <!-- footer -->
+    <div class="footer">
+        <hr>
+        <ul class="FooterUl" style="display: flex; flex-direction: row; justify-content: center;">
+            <li class="footerLi" style="list-style: none; margin: 0 20px; line-height: 4rem; cursor: pointer;">Privacy Policy</li>
+            <li class="footerLi" style="list-style: none; margin: 0 20px; line-height: 4rem; cursor: pointer;">Community</li>
+            <li class="footerLi" style="list-style: none; margin: 0 20px; line-height: 4rem; cursor: pointer;">Projects</li>
+        </ul>
+
+    </div>
 
     <script src="index.js"></script>
 </body>
