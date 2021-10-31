@@ -623,6 +623,10 @@ button {
     background-color: #FE5F55; 
 }
 
+.profileSettingBlock { 
+    margin: 0;
+}
+
 
 /* footer */
 .footer { 

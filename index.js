@@ -39,10 +39,10 @@ const footer = document.querySelector('.footer');
 
 const events = document.querySelector('.events');
 const people = document.querySelector('.people');
-const group = document.querySelector('.group');
+const profileSetting = document.querySelector('.profileSetting');
 const eventBlock = document.querySelector('.eventBlock');
 const peopleBlock = document.querySelector('.peopleBlock');
-const groupBlock = document.querySelector('.groupBlock');
+const profileSettingBlock = document.querySelector('.profileSettingBlock');
 const profileCompactImg = document.querySelector('.profileCompactImg');
 
 let mainProfilePic = document.querySelector('.profilePic');
@@ -127,8 +127,8 @@ people.addEventListener('click', () => {
     goToPeople();
 });
 
-group.addEventListener('click', () => {
-    goToGroup();
+profileSetting.addEventListener('click', () => {
+    goToProfileSetting();
 });
 
 profileCompactImg.addEventListener('click', () => {
@@ -260,22 +260,22 @@ SignUpFinal = (e) => {
 goToEvents = (e) => {
     eventBlock.style.display = 'block';
     peopleBlock.style.display = 'none';
-    groupBlock.style.display = 'none';
+    profileSettingBlock.style.display = 'none';
 
     events.classList.contains('activityActive') ? null : events.classList.add('activityActive');
     people.classList.contains('activityActive') ? people.classList.remove('activityActive') : null;
-    group.classList.contains('activityActive') ? group.classList.remove('activityActive') : null;
+    profileSetting.classList.contains('activityActive') ? profileSetting.classList.remove('activityActive') : null;
     profileCompactImg.style.border = "2px solid #577399";
 }
 
 goToPeople = (e) => {
     eventBlock.style.display = 'none';
     peopleBlock.style.display = 'flex';
-    groupBlock.style.display = 'none';
+    profileSettingBlock.style.display = 'none';
 
     events.classList.contains('activityActive') ? events.classList.remove('activityActive') : null;
     people.classList.contains('activityActive') ? null : people.classList.add('activityActive');
-    group.classList.contains('activityActive') ? group.classList.remove('activityActive') : null;
+    profileSetting.classList.contains('activityActive') ? profileSetting.classList.remove('activityActive') : null;
     profileCompactImg.style.border = "2px solid #577399";
 
 
@@ -324,14 +324,14 @@ goToPeople = (e) => {
 
 
 
-goToGroup = (e) => {
+goToProfileSetting = (e) => {
     eventBlock.style.display = 'none';
     peopleBlock.style.display = 'none';
-    groupBlock.style.display = 'block';
+    profileSettingBlock.style.display = 'block';
 
     events.classList.contains('activityActive') ? events.classList.remove('activityActive') : null;
     people.classList.contains('activityActive') ? people.classList.remove('activityActive') : null;
-    group.classList.contains('activityActive') ? null : group.classList.add('activityActive');
+    profileSetting.classList.contains('activityActive') ? null : profileSetting.classList.add('activityActive');
     profileCompactImg.style.border = "2px solid #577399";
 
 }
@@ -340,10 +340,10 @@ goToGroup = (e) => {
 goToProfile = (e) => {
     eventBlock.style.display = 'none';
     peopleBlock.style.display = 'none';
-    groupBlock.style.display = 'none';
+    profileSettingBlock.style.display = 'none';
 
     events.classList.contains('activityActive') ? events.classList.remove('activityActive') : null;
     people.classList.contains('activityActive') ? people.classList.remove('activityActive') : null;
-    group.classList.contains('activityActive') ? group.classList.remove('activityActive') : null;
+    profileSetting.classList.contains('activityActive') ? profileSetting.classList.remove('activityActive') : null;
     profileCompactImg.style.border = "2px solid #FE5F55";
 }
