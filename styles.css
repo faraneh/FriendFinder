@@ -626,6 +626,37 @@ button {
 .profileSettingBlock { 
     margin: 0;
 }
+.generalSetting { 
+    list-style: none;
+    width: 90%;
+    margin: auto;
+    background-color: #F7F7FF;
+    border: 1px solid #BDD5EA;
+    border-radius: 15px;
+    padding-top: 40px;
+    padding-bottom: 10px;
+}
+
+.generalSettingLabel { 
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: #577399;
+    padding: 0;
+}
+.generalSettingInput { 
+    margin: 10px auto 20px;
+    width: 90%;
+    height: 2rem;
+    border-radius: 7px;
+    border: none;
+    max-width: 600px;
+    border: 1px solid #BDD5EA;
+}
+
+
+
+
+
 
 
 /* footer */
