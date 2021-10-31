@@ -1,22 +1,57 @@
 body{
     text-align: center;
     justify-content: center;
-    margin: 0;
+    margin: 0 auto;
     padding: 0;
     background-color: #F7F7FF;
     font-family: 'Ubuntu', sans-serif;
-    min-height: 2000px;
+    min-height: 100vh;
+    height: fit-content;
+    width: fit-content;
+    min-width: 250px;
+    max-width:1600px;
+    overflow-X:scroll;
 }
+button { 
+    cursor: pointer;
+}
+.siteContent { 
+    max-width: 1600px;
+    margin: 0 auto;
+}
+.mainContent { 
+    padding: 0 ;
+    width: 100vw;
+    min-width: 100%;
+    max-width: 1600px;
+    margin: 0 auto;
+    height: fit-content;
+}
+.darkbackground { 
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.658);
+    display: none;
+}
+
 
 /* navbar */
 .navbar { 
     width: 100vw;
+    max-width: 1600px;
+    margin: auto;
     height: 8rem;
-    position: fixed;
-    top: 0;
+    padding:20px 20px;
+}
+.logoName { 
+    display: none;
 }
 .hamburgerVisual { 
     width: 60px;
+    max-width: 95vw;
     height: 50px;
     margin: 0;
     display: flex;
@@ -24,6 +59,7 @@ body{
     justify-content: space-evenly;
     margin-top: 20px;
     cursor: pointer;
+    display: flex;
 }
 .ham { 
     width: 50px;
@@ -31,39 +67,135 @@ body{
     background-color: #577399;
     margin: auto;
     border-radius: 3px;
-}
-.ham:hover { 
-    background-color: #FE5F55;
+    transition: transform 1s ease-out;
 }
 
+.ham1Active { 
+    transform: translateX(1000px);
+}
+.ham2Active { 
+    transform: translateX(1000px);
+}
+.ham3Active { 
+    transform: translateX(1000px);
+}
+.hamburgerMenuCrossed { 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.hamCross { 
+    width: 50px;
+    height: 6px;
+    background-color: #F7F7FF;;
+    margin: auto;
+    border-radius: 3px;
+}
+.hamCross1 { 
+    transform: rotate(45deg) translateY(25px);
+}
+.hamCross2 { 
+    transform: rotate(-45deg) translateY(-25px);
+}
 
+.hamburgerItems { 
+    width: 230px;
+    height: fit-content;
+    position: fixed;
+    right: -15px;
+    top: 20px;
+    transform: translateX(500px);
+    transition: transform 1s ease-in-out;
+}
+.hamburgerItem { 
+    width: 230px;
+    height: 70px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    font-weight: 430;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+    padding: 22px;
+    background-color: #577399;
+    color: #F7F7FF;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.267);
+}
 
 
 /* signin / sign up */
 
 .siteIntro { 
-    width: 300px;
-    height: 450px;
+    width: 200px;
+    min-width:200px;
+    height: fit-content;
     background-color: #577399;
     box-sizing: content-box;
     padding: 30px;
     border-radius: 20px;
-    margin: auto;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translateY(-50%) translateX(-50%);
+    margin: 50px auto 0;
     box-shadow: 2px 3px 21px 1px rgba(87,115,153,0.79);
     -webkit-box-shadow: 2px 3px 21px 1px rgba(87,115,153,0.79);
     -moz-box-shadow: 2px 3px 21px 1px rgba(87,115,153,0.79);
+    display: block; /* ---------------------------------------edited--------------------------------------- */
+}
+.welcomeView { 
+    display: block;
+}
+.signInView { 
+    display: none;
+}
+.signInView h2 { 
+    color: #F7F7FF;
+    font-weight: 300;
+}
+.signInView label { 
+    font-size: 1.2rem;
+    font-weight: 200;
+    color: #F7F7FF;
+    padding: 0;
+}
+.signInView label input { 
+    margin: 20px auto;
+    width: 90%;
+    height: 2rem;
+    border-radius: 7px;
+    border: none;
+}
+.signInFormLabel { 
+    text-align: center;
+}
+.signInFormSubmit { 
+    border: none;
+    box-shadow: none;
+    width: 150px;
+    height: 50px;
+    border-radius: 15px;
+    background-color: #FE5F55;
+    color: #F7F7FF;
+    font-size: 1.4rem;
+    font-weight: 600;
+    text-shadow: 1px 1px 10px #af8153;
+    cursor: pointer;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.signInFormBack { 
+    color: #F7F7FF;
+    font-weight: 400;
+    border: none;
+    box-shadow: none;
+    width: 150px;
+    height: 40px;
+    border-radius: 15px;
+    background-color: #577399;
+    font-size: 1.4rem;
+    cursor: pointer;
 }
 .siteIntroImg { 
     width: 150px;
     height: 150px;
     border-radius: 50%;
-    position: absolute;
-    top: -78px;
-    left: 0px;
     border: 10px solid #577399;
     box-shadow: 2px 3px 21px 1px rgba(87,115,153,0.79);
     -webkit-box-shadow: 2px 3px 21px 1px rgba(87,115,153,0.79);
@@ -74,7 +206,7 @@ body{
     font-weight: 200;
     line-height: 2.5rem;
     font-size: 2rem;
-    margin-top: 80px;
+    margin-top: 20px;
     margin-bottom: 50px;
 }
 .siteIntroSpan { 
@@ -107,16 +239,495 @@ body{
 }
 
 
+.signUpView { 
+    display: none;
+}
+.signUpView h2 { 
+    color: #F7F7FF;
+    font-weight: 300;
+}
+.signUpFormLabel { 
+    font-size: 1.2rem;
+    font-weight: 200;
+    color: #F7F7FF;
+    padding: 0;
+}
+.signUpFormLabel input { 
+    margin: 10px auto 20px;
+    width: 90%;
+    height: 2rem;
+    border-radius: 7px;
+    border: none;
+}
+.signUpFormBack { 
+    color: #F7F7FF;
+    font-weight: 400;
+    border: none;
+    box-shadow: none;
+    width: 150px;
+    height: 40px;
+    border-radius: 15px;
+    background-color: #577399;
+    font-size: 1.4rem;
+    cursor: pointer;
+}
+.signUpFormSubmit { 
+    border: none;
+    box-shadow: none;
+    width: 150px;
+    height: 50px;
+    border-radius: 15px;
+    background-color: #FE5F55;
+    color: #F7F7FF;
+    font-size: 1.4rem;
+    font-weight: 600;
+    text-shadow: 1px 1px 10px #af8153;
+    cursor: pointer;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
 
+
+.usenameFailP { 
+    display: none;
+    color: #F7F7FF;;
+    font-size: 1rem;
+    margin: 30px auto 45px;
+}
+.usenameFailBtn { 
+    display: none;
+    border: none;
+    box-shadow: none;
+    width: 150px;
+    height: 50px;
+    border-radius: 15px;
+    background-color: #FE5F55;
+    color: #F7F7FF;
+    font-size: 1.4rem;
+    font-weight: 800;
+    text-shadow: 1px 1px 10px #af8153;
+    cursor: pointer;
+}
+
+
+/* home */
+.home { 
+    display: none; /* ---------------------------------------edited--------------------------------------- */
+    width: 95%;
+    min-width: 95%;
+    max-width: 1100px;
+    margin: auto;
+}
+.row { 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.homeCol{
+    height: fit-content;
+    width: 100%;
+    margin: 0;
+}
+.homeCol1 { 
+    width: fit-content;
+    padding : 0 5px;
+    box-sizing: content-box;
+}
+.homeCol3 { 
+    width: fit-content !important;
+    padding: 0 !important;
+    margin: 0 auto !important;
+}
+.profile { 
+    width: 250px;
+    padding: 0 auto;
+    padding-bottom: 30px;
+    border: 2px solid #577399;
+    box-sizing: border-box;
+    border-radius: 15px;
+    background-color: #BDD5EA;
+    display: none;
+}
+.name { 
+    font-size: 1.5rem;
+    font-weight: 900;
+    margin-top: 10px;
+    margin-bottom: 0;
+}
+.profilePic { 
+    margin: 30px auto 20px;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 2px solid #577399;
+}
+.profile p { 
+    line-height: 1rem;
+}
+.parkLists { 
+    width: 250px;
+    height: fit-content;
+    min-height: 250px;
+    padding: 5px;
+    border: 1px solid #BDD5EA;
+    box-sizing: border-box;
+    border-radius: 15px;
+    margin-top: 10px;
+    display: none;
+}
+.parkLists ul{
+    margin: 0;
+    padding: 0;
+}
+.parkLists ul li { 
+    list-style: none;
+    text-align: left;
+    margin: 10px 0;
+    line-height: 2rem;
+    background-color: #BDD5EA;
+    width: fit-content;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 15px;
+}
+.parkLists ul li:hover { 
+    background-color: #FE5F55;
+}
+
+.activities { 
+    width: 100%;
+    max-width: 1000px;
+    margin: auto;
+    padding: 0;
+    padding-bottom: 30px;
+    /* border: 1px solid #BDD5EA; */
+    box-sizing: border-box;
+    border-radius: 15px;
+    background-color: #F7F7FF;
+}
+.activities ul { 
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 0;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+.activities ul li { 
+    list-style: none;
+    width: 100px;
+    background-color: #577399;
+    border-radius: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: #F7F7FF;
+    font-weight: 500;
+    cursor: pointer;
+}
+.activityActive { 
+    background-color: #FE5F55 !important;
+}
+.profileCompact { 
+    padding: 0 !important;
+    background-color: transparent !important;
+    width: 80px !important;
+    height: 30px !important;
+}
+.profileCompact img{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin: 0;
+    border: 2px solid #577399;
+    transform: translateY(-3px);
+}
+.upComingEvent { 
+    width: 100%;
+    padding: 0 auto;
+    padding-bottom: 30px;
+    border: 1px solid #BDD5EA;
+    box-sizing: border-box;
+    border-radius: 15px;
+}
+.UpcomingeventImg {
+    width: 230px;
+    height: 230px;
+    border-radius: 10px;
+    margin: 10px;
+    margin-top: 20px;
+}
+.upComingEvent p { 
+    line-height: 1.5rem;
+}
+.upComingEvent button { 
+    border: none;
+    box-shadow: none;
+    width: 140px;
+    height: 45px;
+    border-radius: 15px;
+    background-color: #FE5F55;
+    color: #F7F7FF;
+    font-size: 1.4rem;
+    font-weight: 800;
+    text-shadow: 1px 1px 10px #af8153;
+    cursor: pointer;
+}
+.friendRequest { 
+    width: 100%;
+    padding: 0 auto;
+    padding-bottom: 30px;
+    border: 1px solid #BDD5EA;
+    box-sizing: border-box;
+    border-radius: 15px;
+    margin-top: 10px;
+}
+.friendRequestImg { 
+    width: 230px;
+    height: 230px;
+    border-radius: 10px;
+    margin: 10px;
+    margin-top: 20px;
+}
+.friendRequest button{ 
+    border: none;
+    box-shadow: none;
+    width: 100px;
+    height: 45px;
+    border-radius: 15px;
+    background-color: #BDD5EA;
+    color: #577399;
+    font-size: 1.2rem;
+    font-weight: 500;
+    cursor: pointer;
+}
+.acceptBtn { 
+    color: white !important;
+    background-color: #577399 !important;
+}
+.friendRequest button:hover { 
+    background-color: #FE5F55 !important;
+}
+
+.event { 
+    width: 95%;
+    margin: 10px auto;
+    height: fit-content;
+    border: 1px solid #BDD5EA;
+    border-radius: 10px;
+    padding :10px;
+    box-sizing: border-box;
+}
+.event h4 { 
+    width: 85%;
+    text-align: left;
+    font-size: 1.8rem;
+    margin: 15px auto;
+}
+.event p { 
+    width: 85%;
+    text-align: left;
+    margin: 15px auto; 
+    font-size: 1rem;
+    line-height: 1.5rem;
+}
+.eventImg { 
+    width: 85%;
+    height: auto;
+}
+.eventBtns { 
+    width: 85%;
+    margin: 10px auto 20px;
+    text-align: left;
+}
+.eventSubscribe { 
+    border: none;
+    box-shadow: none;
+    width: 120px;
+    height: 40px;
+    border-radius: 15px;
+    background-color: #FE5F55;
+    color: #F7F7FF;
+    font-size: 1.2rem;
+    font-weight: 500;
+    cursor: pointer;
+    margin-right: 10px;
+}
+.eventMore { 
+    border: 1px solid #577399;
+    box-shadow: none;
+    width: 120px;
+    height: 40px;
+    border-radius: 15px;
+    background-color: #F7F7FF;
+    color: #577399;
+    font-size: 1.2rem;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+
+.peopleBlock{
+    width: 95%;
+    padding: 0;
+    margin: 0 auto;
+    display: none;
+    flex-direction: row;
+    flex-wrap: wrap;
+    max-width: 900px;
+    justify-content: center;
+}
+.person { 
+    padding: 0;
+    width: 240px;
+    margin: 10px;
+    height: 400px;
+    border: 1px solid #BDD5EA;
+    border-radius: 10px;
+}
+.personPic { 
+    width: 200px;
+    height: 200px;
+    margin: 20px auto;
+    border-radius: 50%;
+}
+.personName { 
+    width: 90%;
+    margin: 0 auto;
+    text-align: center;
+    font-weight: 600;
+    font-size: 1.4rem;
+}
+.personownersName { 
+    font-weight: light;
+    margin: 10px auto;
+}
+.personLocation { 
+    font-size: 0.9rem;
+    font-weight: light;
+    margin: 10px auto;
+}
+.personBtn { 
+    border: none;
+    box-shadow: none;
+    width: 120px;
+    height: 40px;
+    border-radius: 15px;
+    background-color: #577399;
+    color: #F7F7FF;
+    font-size: 1.2rem;
+    font-weight: 500;
+    cursor: pointer;
+    margin: 10px auto 20px;
+}
+.personBtn:hover { 
+    background-color: #FE5F55; 
+}
 
 
 /* footer */
 .footer { 
-    position: absolute;
-    bottom: 0;
-    height: 8rem;
+    height: fit-content;
     width: 100%;
+    margin-top: 200px;
+}
+.footerUl { 
+    flex-direction: column;
+    padding: 0;
+}
+.footerLi { 
+    margin: 0;
 }
 .footer hr { 
     width: 95%;
+}
+
+
+
+
+
+
+/* ------------------------------height responsiveness------------------------------ */
+@media screen and (min-height: 1000px) { 
+    .footer { 
+        /* position: absolute; */
+        bottom: 0;
+    }
+}
+
+
+/* ------------------------------width responsiveness------------------------------ */
+
+@media screen and (min-width: 350px) { 
+    .siteIntro { 
+        width: 250px;
+    }
+}
+
+@media screen and (min-width: 400px) { 
+    .logoName { 
+        display: flex;
+    }
+    .signInView label input { 
+        width: 15rem;
+        margin-left: 5px;
+        transform: translateY(-2px);
+    }
+
+}
+
+@media screen and (min-width: 500px) { 
+    .siteIntro { 
+        width: 260px;
+        margin-top: 50px;
+    }
+    .footerUl { 
+        flex-direction: row;
+    }
+    .footerLi { 
+        margin: 0 10px;
+    }
+    .navbar { 
+        padding:20px 80px;
+    }
+}
+
+@media screen and (min-width: 900px) { 
+    .siteIntro { 
+        width: 400px;
+    }
+    .signInFormLabel { 
+        text-align: right;
+    }
+    .row { 
+        flex-direction: row;
+        flex-flow: row;
+    }
+    .navbar{
+        margin-bottom: 40px;
+    }
+    .parkLists { 
+        display: block;
+    }
+    .profile { 
+        display: block;
+    }
+    .profileCompact {
+        display: none;
+    }
+    .friendRequest{
+        width: 250px;
+    }
+    .upComingEvent {
+        width: 250px;
+    }
+    .signInFormSubmit { 
+        margin-bottom: 0px;
+    }
+    .signUpFormSubmit { 
+        margin-bottom: 0px;
+    }
+}
+
+@media screen and (min-width: 1100px) { 
+
 }

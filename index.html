@@ -23,56 +23,265 @@
     <title>Dog (Owner) Finder</title>
 </head>
 <body>
-    <!-- navbar -->
-    <div class="navbar" style='display: flex; flex-direction: row; justify-content: space-between; padding:20px 50px; box-sizing: border-box;'>
-        <div class="logo" style="display: flex; flex-direction: row; justify-content: center; cursor: pointer;">
-            <i class="fas fa-paw" style="font-size: 5rem; transform: rotate(10deg); color: #BDD5EA;"></i><p style="line-height: 5rem; font-size: 1.8rem; margin: 5px 0 0 -25px; font-weight: 100; z-index: 2;">DogWalkers</p>
-        </div>
-        <div class="rightLinks">
-            <div class="links">
-                <ul class="linksUl" style="display: none; flex-direction: row;">
-                    <li class="linksLi" style="list-style: none; margin: 0 20px; line-height: 4rem">About Us</li>
-                    <li class="linksLi" style="list-style: none; margin: 0 20px; line-height: 4rem">Contact Us</li>
-                    <li class="linksLi" style="list-style: none; margin: 0 20px; line-height: 4rem">Community</li>
-                </ul>
+        <div class="siteContent">
+        <!-- ----------------------- navbar ----------------------- -->
+        <div class="navbar" style='display: flex; flex-direction: row; justify-content: space-between; box-sizing: border-box;'>
+            <div class="logo" style="display: flex; flex-direction: row; justify-content: center; cursor: pointer;">
+                <i class="fas fa-paw" style="font-size: 5rem; transform: rotate(10deg); color: #BDD5EA;"></i><p class="logoName" style="line-height: 5rem; font-size: 1.8rem; margin: 5px 0 0 -25px; font-weight: 100; z-index: 2;">DogWalkers</p>
             </div>
-            <div class="hamburger">
-                <div class="hamburgerVisual">
-                    <span class="ham ham1"></span>
-                    <span class="ham ham2"></span>
-                    <span class="ham ham3"></span>
+            <div class="rightLinks">
+                <div class="links">
+                    <ul class="linksUl" style="display: none; flex-direction: row;">
+                        <li class="linksLi" style="list-style: none; margin: 0 20px; line-height: 4rem">About Us</li>
+                        <li class="linksLi" style="list-style: none; margin: 0 20px; line-height: 4rem">Contact Us</li>
+                        <li class="linksLi" style="list-style: none; margin: 0 20px; line-height: 4rem">Community</li>
+                    </ul>
                 </div>
-                <div class="hamburgerItems"></div>
+                <div class="hamburger">
+                    <div class="hamburgerVisual">
+                        <span class="ham ham1"></span>
+                        <span class="ham ham2"></span>
+                        <span class="ham ham3"></span>
+                    </div>
+                    <div class="hamburgerItems" style="z-index: 100">
+                        <div class="hamburgerItem hamburgerMenuCrossed" style="padding: 0;">
+                            <span class="hamCross hamCross1"></span>
+                            <span class="hamCross hamCross2"></span>
+                        </div>
+                        <div class="hamburgerItem">About Us</div>
+                        <div class="hamburgerItem">Contact Us</div>
+                        <div class="hamburgerItem">Community</div>
+                    </div>
+                </div>
             </div>
         </div>
+
+        <div class="mainContent">
+            <!-- ----------------------- welcome part ----------------------- -->
+            <div class="siteIntro">
+                <div class="welcomeView">
+                    <img src="https://images.unsplash.com/photo-1625564880755-e8458e31cc7b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2080&q=80" class="siteIntroImg" alt='image'>
+                    <h1>You walk your dog alone ? <br> <span class="siteIntroSpan">Time to join us !</span></h1>
+                    <button class="siteIntroBtn1">Sign Up</button>
+                    <hr style="width: 60%; border:1px solid #495867; margin: 20px auto 15px;">
+                    <button class="siteIntroBtn2">Sign In</button>
+                </div>
+
+                <div class="signInView">
+                    <h2>Sign in</h2>
+                    <hr style="width: 60%; border:1px solid #495867; margin: 20px auto 15px;">
+                    <form style="width: fit-content; margin: auto;">
+                        <div class="signInFormLabel">
+                            <label>UserName:
+                                <input type="username" class="usernameInput">
+                            </label><br>
+                            <label>Password:
+                                <input type="password" class="usernameInput passwordInput">
+                            </label><br>
+                        </div>
+                        <p class="usenameFailP"></p>
+                        <div style="width: 100%; display:flex; flex-flow: row; flex-wrap: wrap-reverse; justify-content: center;">
+                            <button class="signInFormBack">Back</button>
+                            <button class="usenameFailBtn">Sign up ?</button>
+                            <button class="signInFormSubmit" type='submit'>Sign in</button>
+                            
+                        </div>
+                    </form>
+                </div>
+
+                <div class="signUpView">
+                    <h2>Sign Up</h2>
+                    <hr style="width: 60%; border:1px solid #495867; margin: 20px auto 15px;">
+                    <div class="signUpFormLabel">
+
+                        <div style="border: 1px solid #495867; padding-right:5px; padding-left: 5px; padding-top: 20px; box-sizing: border-box; border-radius: 10px; margin: 10px auto;">
+                            <label>UserName:
+                                <input type="username" class="usernameInputSignUp">
+                            </label><br>
+                            <label>Password:
+                                <input type="password" class="usernameInput passwordInputSignUp">
+                            </label><br>
+                            <label>Password repeat:
+                                <input type="password" class="usernameInput passwordInputSignUp2">
+                            </label><br>
+                        </div>
+                        
+                        <div style="border: 1px solid #495867; padding-right:5px; padding-left: 5px; padding-top: 20px; box-sizing: border-box; border-radius: 10px; margin: 10px auto;">
+                            <label>Breed:
+                                <input type="username" class="usernameInputSignUp breedSignUp">
+                            </label><br>
+                            <label>Dog's Name:
+                                <input type="username" class="usernameInputSignUp dogNameSignUp">
+                            </label><br>
+                            <label>Owner's Name:
+                                <input type="username" class="usernameInputSignUp ownersnameSignUp">
+                            </label><br>
+                        </div>
+
+                        <div style="border: 1px solid #495867; padding-right:5px; padding-left: 5px; padding-top: 20px; box-sizing: border-box; border-radius: 10px; margin: 10px auto;">
+                            <label>City:
+                                <input type="username" class="usernameInputSignUp citySignUp">
+                            </label><br>
+                            <label>Country:
+                                <input type="username" class="usernameInputSignUp countrySignUp">
+                            </label><br>
+                        </div>
+                        <div style="width: 100%; display:flex; flex-flow: row; flex-wrap: wrap-reverse; justify-content: center;">
+                            <button class="signUpFormBack">Back</button>
+                            <button class="signUpFormSubmit">Sign up</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <!-- ----------------------- main page ----------------------- -->
+            <div class="home">
+                    <div class="row">
+                        <div class="homeCol homeCol1">
+                            <div class="profile">
+                                <img src="https://images.unsplash.com/photo-1537815749002-de6a533c64db?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2132&q=80" alt="profilePic" class="profilePic">
+                                <p class="name">Name</p>
+                                <p class="ownerName">Pet's Name(s)</p>
+                                <p class="location">Location</p>
+                            </div>
+                            <div class="parkLists">
+                                <h4 style="text-align: left; margin-left: 10px; color: #495867; font-size: 1.2rem; margin-bottom: 15px;">Park List</h4>
+                                <hr style="width: 90%; border:1px solid #BDD5EA; margin: 0px auto 20px;">
+                                <ul>
+                                    <li>Yonge & York Mills Dog Park</li>
+                                    <li>High Park Dog Off Leash Area</li>
+                                    <li>Sunnybrook Dog Park</li>
+                                </ul>
+                            </div>
+                        </div>
+
+
+
+                        <div class="homeCol homeCol2">
+                            <!-- ---------- Activities ---------- -->
+                            <div class="activities">
+                                <ul>
+                                    <li class="profileCompact"><img class="profileCompactImg" src="https://images.unsplash.com/photo-1537815749002-de6a533c64db?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2132&q=80" alt="profilePic"></li>
+                                    <li class="events activityActive">Events</li>
+                                    <li class="people" style="margin: 0 10px;">People</li>
+                                    <li class="group" >Groups</li>
+                                </ul>
+                                <hr style="width: 60%; border:1px solid #BDD5EA; margin: 20px auto 20px;">
+                                <!-- ---------- Events ---------- -->
+                                <div class="eventBlock">
+                                    <div class="event">
+                                        <h4>Event name</h4>
+                                        <p>HH:MM - MM/DD</p>
+                                        <img src="https://images.unsplash.com/photo-1521058791370-fa849b7d56cb?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2124&q=80" alt="event" class="eventImg">
+                                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestias, quisquam vero unde quas nostrum veritatis quia sequi perspiciatis fugiat odit!</p>
+                                        <div class="eventBtns">
+                                            <button class="eventSubscribe">Subscribe</button>
+                                            <button class="eventMore">Read more</button>
+                                        </div>
+                                    </div>
+
+                                    <div class="event">
+                                        <h4>Event name</h4>
+                                        <p>HH:MM - MM/DD</p>
+                                        <img src="https://images.unsplash.com/photo-1601950620185-f9c6a84b2c15?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2080&q=80" alt="event" class="eventImg">
+                                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestias, quisquam vero unde quas nostrum veritatis quia sequi perspiciatis fugiat odit!</p>
+                                        <div class="eventBtns">
+                                            <button class="eventSubscribe">Subscribe</button>
+                                            <button class="eventMore">Read more</button>
+                                        </div>
+                                    </div>
+
+                                    <div class="event">
+                                        <h4>Event name</h4>
+                                        <p>HH:MM - MM/DD</p>
+                                        <img src="https://images.unsplash.com/photo-1506551109886-6101f48c1ab9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2080&q=80" alt="event" class="eventImg">
+                                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestias, quisquam vero unde quas nostrum veritatis quia sequi perspiciatis fugiat odit!</p>
+                                        <div class="eventBtns">
+                                            <button class="eventSubscribe">Subscribe</button>
+                                            <button class="eventMore">Read more</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <!-- ---------- People ---------- -->
+                                <div class="peopleBlock">
+                                    <!-- <div class="person">
+                                        <img src="https://images.unsplash.com/photo-1604632797782-aeea068823f3?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2080&q=80" alt="profile-pic" class="personPic">
+                                        <p class="personName">Name</p>
+                                        <p class="personownersName">Owners name</p>
+                                        <p class="personLocation">(Location)</p>
+                                        <button class="personBtn">Connect</button>
+                                    </div>
+                                    <div class="person">
+                                        <img src="https://images.unsplash.com/photo-1604632797782-aeea068823f3?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2080&q=80" alt="profile-pic" class="personPic">
+                                        <p class="personName">Name</p>
+                                        <p class="personownersName">Owners name</p>
+                                        <p class="personLocation">(Location)</p>
+                                        <button class="personBtn">Connect</button>
+                                    </div>
+                                    <div class="person">
+                                        <img src="https://images.unsplash.com/photo-1604632797782-aeea068823f3?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2080&q=80" alt="profile-pic" class="personPic">
+                                        <p class="personName">Name</p>
+                                        <p class="personownersName">Owners name</p>
+                                        <p class="personLocation">(Location)</p>
+                                        <button class="personBtn">Connect</button>
+                                    </div>
+                                    <div class="person">
+                                        <img src="https://images.unsplash.com/photo-1604632797782-aeea068823f3?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2080&q=80" alt="profile-pic" class="personPic">
+                                        <p class="personName">Name</p>
+                                        <p class="personownersName">Owners name</p>
+                                        <p class="personLocation">(Location)</p>
+                                        <button class="personBtn">Connect</button>
+                                    </div> -->
+                                </div>
+
+                                <!-- ---------- Groups ---------- -->
+                                <div class="groupBlock">
+
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                        <div class="homeCol homeCol3" style="width: fit-content; padding-right: 5px; padding-left: 5px;">
+                            <div class="upComingEvent">
+                                <img class="UpcomingeventImg" src="https://images.unsplash.com/photo-1604152971040-e2569ed6964c?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2080&q=80" alt="event">
+                                <p style="margin-bottom: 10px; font-weight: bold;">Location</p>
+                                <p style="font-weight: bold;">HH:MM - MM/DD</p>
+                                <p style="font-weight: lighter; margin-bottom: 20px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident, voluptate?</p>
+                                <button>Attend</button>
+                            </div>
+                            <div class="friendRequest">
+                                <img class="friendRequestImg" src="https://images.unsplash.com/photo-1608831540955-35094d48694a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1726&q=80" alt="event">
+                                <p style="font-weight: bold;">Pet Name</p>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident, voluptate?</p>
+                                <button class='acceptBtn'>Accept</button>
+                                <button>Deny</button>
+                            </div>
+                        </div>
+                </div>
+            </div>
+
+
+            
+        
+            <!-- ----------------------- footer ----------------------- -->
+            <div class="footer">
+                <hr>
+                <ul class="footerUl" style="display: flex; justify-content: center;">
+                    <li class="footerLi" style="list-style: none; line-height: 4rem; cursor: pointer;">Privacy Policy</li>
+                    <li class="footerLi" style="list-style: none; line-height: 4rem; cursor: pointer;">Community</li>
+                    <li class="footerLi" style="list-style: none; line-height: 4rem; cursor: pointer;">Projects</li>
+                </ul>
+
+            </div>
+        </div> 
+        <div class="darkbackground"></div>
     </div>
-
-
-    <!-- welcome part -->
-    <div class="siteIntro">
-        <img src="https://images.unsplash.com/photo-1625564880755-e8458e31cc7b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2080&q=80" class="siteIntroImg" alt='image'>
-        <h1>You walk your dog alone ? <br> <span class="siteIntroSpan">Time to join us !</span></h1>
-        <button class="siteIntroBtn1">Sign Up</button>
-        <hr style="width: 60%; border:1px solid #495867; margin: 20px auto 15px;">
-        <button class="siteIntroBtn2">Sign In</button>
-    </div>
-
-    <!-- main page -->
-
-
-
-
-    <!-- footer -->
-    <div class="footer">
-        <hr>
-        <ul class="FooterUl" style="display: flex; flex-direction: row; justify-content: center;">
-            <li class="footerLi" style="list-style: none; margin: 0 20px; line-height: 4rem; cursor: pointer;">Privacy Policy</li>
-            <li class="footerLi" style="list-style: none; margin: 0 20px; line-height: 4rem; cursor: pointer;">Community</li>
-            <li class="footerLi" style="list-style: none; margin: 0 20px; line-height: 4rem; cursor: pointer;">Projects</li>
-        </ul>
-
-    </div>
-
     <script src="index.js"></script>
 </body>
 </html>
