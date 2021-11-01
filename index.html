@@ -141,7 +141,7 @@
                     <div class="row">
                         <div class="homeCol homeCol1">
                             <div class="profile">
-                                <img src="https://images.unsplash.com/photo-1537815749002-de6a533c64db?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2132&q=80" alt="profilePic" class="profilePic">
+                                <img src="" alt="profilePic" class="profilePic">
                                 <p class="name">Name</p>
                                 <p class="ownerName">Pet's Name(s)</p>
                                 <p class="location">Location</p>
@@ -208,6 +208,7 @@
 
                                 <!-- ---------- People ---------- -->
                                 <div class="peopleBlock">
+                                    
                                     <!-- <div class="person">
                                         <img src="https://images.unsplash.com/photo-1604632797782-aeea068823f3?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2080&q=80" alt="profile-pic" class="personPic">
                                         <p class="personName">Name</p>
@@ -215,6 +216,7 @@
                                         <p class="personLocation">(Location)</p>
                                         <button class="personBtn">Connect</button>
                                     </div> -->
+
                                 </div>
 
                                 <!-- ---------- Groups ---------- -->
@@ -222,7 +224,11 @@
                                     <div class="generalSetting">
                                         <form>
                                             <label class="generalSettingLabel">Profile picture URL<br>
-                                                <input class="generalSettingInput">
+                                                <!-- <input class="generalSettingInput"> -->
+                                                    <div class="drop-zone">
+                                                        <span class="drop-zone__prompt">Drop file here or click to upload</span>
+                                                        <input type="file" name="myFile" class="drop-zone__input">
+                                                    </div>
                                             </label>
                                         </form>
                                     </div>

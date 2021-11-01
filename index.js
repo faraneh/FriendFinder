@@ -158,20 +158,24 @@ closeHamburgerHandler = () => {
 signInHandler = () => {
     welcomeView.style.display = 'none';
     signInView.style.display = 'block';
+    footer.style.position = 'absolute';
 }
 signUpHandler = () => {
     welcomeView.style.display = 'none';
     signUpView.style.display = 'block';
+    footer.style.position = 'relative';
 }
 
 signInBackHandler = () => { 
     welcomeView.style.display = 'block';
     signInView.style.display = 'none';
+    footer.style.position = 'absolute';
 }
 
 signUpBackHandler = () => {
     welcomeView.style.display = 'block';
     signUpView.style.display = 'none';
+    footer.style.position = 'absolute';
 }
 
 SignInFinal = (e) => {
@@ -216,6 +220,8 @@ SignInFinal = (e) => {
     profileMainName.innerHTML = User[currentAccount].name;
     mainOwnerName.innerHTML = User[currentAccount].ownerName;
     mainLocation.innerHTML = `${User[currentAccount].city} - ${User[currentAccount].country}`;
+
+    footer.style.position = 'relative';
 }
 
 SignUpFinal = (e) => {
@@ -249,12 +255,37 @@ SignUpFinal = (e) => {
                 ownersnameSignUp.value, 
                 citySignUp.value, 
                 countrySignUp.value,
-                []);
+                [],
+                'https://images.unsplash.com/photo-1565057430174-c0477ddad363?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1725&q=80');
+
+                siteIntro.style.display = 'none';
+                home.style.display = 'block';
+                footer.style.position= 'relative';
+
+                eventBlock.style.display = 'none';
+                peopleBlock.style.display = 'none';
+                profileSettingBlock.style.display = 'block';
+            
+                events.classList.contains('activityActive') ? events.classList.remove('activityActive') : null;
+                people.classList.contains('activityActive') ? people.classList.remove('activityActive') : null;
+                profileSetting.classList.contains('activityActive') ? null : profileSetting.classList.add('activityActive');
+                profileCompactImg.style.border = "2px solid #577399";
+
+
+                console.log(User);
+                currentAccount = usernameInputSignUp.value;
+                
+            
+                console.log(Object.entries(User).filter(el => el[0] === currentAccount)[0][1].friendList);
+            
+                mainProfilePic.setAttribute('src', User[currentAccount].profileImage);
+                profileMainName.innerHTML = User[currentAccount].name;
+                mainOwnerName.innerHTML = User[currentAccount].ownerName;
+                mainLocation.innerHTML = `${User[currentAccount].city} - ${User[currentAccount].country}`;
+            
+                footer.style.position = 'relative';
         }
 
-    
-    console.log(User);
-    currentAccount = usernameVal;
 }
 
 goToEvents = (e) => {
@@ -280,11 +311,22 @@ goToPeople = (e) => {
 
 
     let friendlistCurrent = Object.entries(User).filter(el => el[0] === currentAccount)[0][1].friendList;
-    console.log(friendlistCurrent);
-    console.log(peopleBlock.length);
-    console.log(User[currentAccount].friendList.length);
+    // console.log(friendlistCurrent);
+    // console.log(peopleBlock.length);
+    // console.log(User[currentAccount].friendList.length);
+
+
 
     peopleBlock.innerHTML = '';
+
+
+    if (friendlistCurrent.length === 0)  {
+        const text = document.createElement('p');
+        text.innerHTML = 'No friends in the list';
+        text.style.margin = '40px auto';
+        text.style.fontFamily = "'Ubuntu', sans-serif;";
+        peopleBlock.appendChild(text);
+    }
 
 
     friendlistCurrent.map(el => {
@@ -347,3 +389,90 @@ goToProfile = (e) => {
     profileSetting.classList.contains('activityActive') ? profileSetting.classList.remove('activityActive') : null;
     profileCompactImg.style.border = "2px solid #FE5F55";
 }
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+document.querySelectorAll(".drop-zone__input").forEach((inputElement) => {
+    const dropZoneElement = inputElement.closest(".drop-zone");
+  
+    dropZoneElement.addEventListener("click", (e) => {
+      inputElement.click();
+    });
+  
+    inputElement.addEventListener("change", (e) => {
+      if (inputElement.files.length) {
+        updateThumbnail(dropZoneElement, inputElement.files[0]);
+      }
+    });
+  
+    dropZoneElement.addEventListener("dragover", (e) => {
+      e.preventDefault();
+      dropZoneElement.classList.add("drop-zone--over");
+    });
+  
+    ["dragleave", "dragend"].forEach((type) => {
+      dropZoneElement.addEventListener(type, (e) => {
+        dropZoneElement.classList.remove("drop-zone--over");
+      });
+    });
+  
+    dropZoneElement.addEventListener("drop", (e) => {
+      e.preventDefault();
+  
+      if (e.dataTransfer.files.length) {
+        inputElement.files = e.dataTransfer.files;
+        updateThumbnail(dropZoneElement, e.dataTransfer.files[0]);
+      }
+  
+      dropZoneElement.classList.remove("drop-zone--over");
+    });
+  });
+  
+  /**
+   * @param {HTMLElement} dropZoneElement
+   * @param {File} file
+   */
+  function updateThumbnail(dropZoneElement, file) {
+    let thumbnailElement = dropZoneElement.querySelector(".drop-zone__thumb");
+
+    console.log(file);
+
+    // User[currentAccount].profileImage = `${file.name}`;
+    // mainProfilePic.setAttribute('src', User[currentAccount].profileImage);
+
+    if (dropZoneElement.querySelector(".drop-zone__prompt")) {
+      dropZoneElement.querySelector(".drop-zone__prompt").remove();
+    }
+  
+    if (!thumbnailElement) {
+      thumbnailElement = document.createElement("div");
+      thumbnailElement.classList.add("drop-zone__thumb");
+      dropZoneElement.appendChild(thumbnailElement);
+    }
+  
+    thumbnailElement.dataset.label = file.name;
+
+    if (file.type.startsWith("image/")) {
+
+      User[currentAccount].profileImage = file.name;
+      
+    
+      const reader = new FileReader();
+  
+      reader.readAsDataURL(file);
+      reader.onload = () => {
+        thumbnailElement.style.backgroundImage = `url('${reader.result}')`;
+      };
+      
+    } else {
+      thumbnailElement.style.backgroundImage = null;
+    }
+    // mainProfilePic.setAttribute('src', `URL("${User[currentAccount].profileImage}")`);
+  }
+
+  
+
+  ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

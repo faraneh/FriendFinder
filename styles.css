@@ -635,6 +635,7 @@ button {
     border-radius: 15px;
     padding-top: 40px;
     padding-bottom: 10px;
+    height: 400px;
 }
 
 .generalSettingLabel { 
@@ -645,7 +646,7 @@ button {
 }
 .generalSettingInput { 
     margin: 10px auto 20px;
-    width: 90%;
+    width: 95%;
     height: 2rem;
     border-radius: 7px;
     border: none;
@@ -653,6 +654,63 @@ button {
     border: 1px solid #BDD5EA;
 }
 
+
+/* ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+
+.drop-zone {
+    max-width: 250px;
+    height: 250px;
+    padding: 15px 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-family: "Quicksand", sans-serif;
+    font-weight: 500;
+    font-size: 1rem;
+    cursor: pointer;
+    color: #577399;
+    background-color: #bdd5eabb;
+    border: 2px solid #BDD5EA;
+    border-radius: 10px;
+    margin: 20px auto;
+    box-sizing: border-box;
+  }
+  
+  .drop-zone--over {
+    border-style: solid;
+  }
+  
+  .drop-zone__input {
+    display: none;
+    margin: 0;
+    border: 1px solid #BDD5EA;
+  }
+  
+  .drop-zone__thumb {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: #cccccc;
+    background-size: cover;
+    position: relative;
+  }
+  
+  .drop-zone__thumb::after {
+    content: attr(data-label);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 5px 0;
+    color: #ffffff;
+    background: rgba(0, 0, 0, 0.75);
+    font-size: 14px;
+    text-align: center;
+  }
+  
+/* ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
 
 
 
@@ -664,6 +722,7 @@ button {
     height: fit-content;
     width: 100%;
     margin-top: 200px;
+    position: absolute;
 }
 .footerUl { 
     flex-direction: column;
@@ -682,7 +741,7 @@ button {
 
 
 /* ------------------------------height responsiveness------------------------------ */
-@media screen and (min-height: 1000px) { 
+@media screen and (min-height: 1100px) { 
     .footer { 
         /* position: absolute; */
         bottom: 0;
@@ -695,7 +754,7 @@ button {
 }
 @media screen and (height: 100vh) and (min-width: 500px) { 
     .footer { 
-        position: absolute;
+        /* position: absolute; */
         bottom: 0;
         left: 0;
     }
