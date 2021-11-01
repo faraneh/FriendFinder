@@ -688,6 +688,20 @@ button {
         bottom: 0;
     }
 }
+@media screen and (max-height: 800px) { 
+    .footer { 
+        display: none;
+    }
+}
+@media screen and (height: 100vh) and (min-width: 500px) { 
+    .footer { 
+        position: absolute;
+        bottom: 0;
+        left: 0;
+    }
+}
+
+
 
 
 /* ------------------------------width responsiveness------------------------------ */
